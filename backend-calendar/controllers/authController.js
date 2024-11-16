@@ -22,6 +22,7 @@ const login = (req, res) => {
 const googleAuth = async (req, res) => {
   const { code } = req.query;
   const { token } = await client.getToken(code);
+  console.log(code,token)
   client.setCredentials(token);
   try {
     const ticket = await client.verifyIdToken({
