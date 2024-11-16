@@ -1,21 +1,27 @@
 require('dotenv').config();
-const express = require("express");
-const  connection  = require("./db");
-const authRoutes = require('./routes/eventRoutes');
+const express = require('express');
+const cors = require('cors');
+const connection = require('./db');
+const authRoutes = require('./routes/authRoutes');
 const eventRoutes = require('./routes/eventRoutes');
 
 const app = express();
-app.use(express.json())
+app.use(express.json());
+app.use(cors());
 
-app.use('/api/auth',authRoutes)
-app.use('/api',eventRoutes)
+app.use('/api/auth', authRoutes);
+app.use('/api/events', eventRoutes);
 
-const PORT = process.env.PORT || 8080;
+app.get('/', (req, res) => {
+  res.send('Welcome to the event management API');
+});
+
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, async () => {
   try {
-    await connection
-    console.log(`Server is running on port ${PORT} and also connected DB connection`);
+    await connection;
+    console.log(`Server is running on port ${PORT} and connected to the DB`);
   } catch (error) {
-    console.error("Error starting server:", error);
+    console.error('Error starting server:', error);
   }
 });
