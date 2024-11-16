@@ -1,0 +1,99 @@
+/* Global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Background gradient for the login container */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f3ec78, #af4261);
+  }
+  
+  /* Styling for the login card */
+  .login-card {
+    background: #fff;
+    padding: 50px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  
+  /* Title styling */
+  .login-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Google button container */
+  .google-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+  
+  .google-btn-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .google-btn-text:hover {
+    background-color: #357ae8;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .google-btn-text:active {
+    background-color: #2c6bc7;
+    transform: translateY(0);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .googleIcon {
+    width: 30px;
+    /* height: 20px; */
+    margin-right: 10px;
+    border-radius: 50%;
+    display: flex;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .login-card {
+      padding: 30px 20px;
+    }
+  
+    .login-title {
+      font-size: 24px;
+    }
+  
+    .google-btn-text {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
+  

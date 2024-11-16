@@ -1,12 +1,10 @@
 import "./App.css";
-import Dashboard from "./components/Dashboard";
-import Login from "./components/Login";
+import AllRoutes from "./routes/AllRoutes";
 
 function App() {
   return (
     <>
-      <Dashboard/>
-      <Login/>
+      <AllRoutes/>
     </>
   );
 }
