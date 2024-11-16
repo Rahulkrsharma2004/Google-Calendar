@@ -21,7 +21,7 @@ const Login = () => {
         <h2 className="login-title">Sign in to continue</h2>
         <br />
         {/* <p className="login-subtitle">Sign in to continue</p> */}
-        <a href="http://localhost:3000/api/auth/login" className="google-btn">
+        <a href="https://google-calendar-nine-blond.vercel.app/api/auth/login" className="google-btn">
           <button className="google-btn-text"><span><img className='googleIcon' src="https://banner2.cleanpng.com/20180413/rfe/avfci721i.webp" alt="" /></span>Sign in with Google</button>
         </a>
       </div>
