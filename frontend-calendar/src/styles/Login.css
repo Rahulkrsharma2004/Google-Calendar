@@ -1,4 +1,3 @@
-/* Global styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,7 +5,6 @@
     font-family: 'Roboto', sans-serif;
   }
   
-  /* Background gradient for the login container */
   .login-container {
     display: flex;
     justify-content: center;
@@ -15,7 +13,6 @@
     background: linear-gradient(135deg, #f3ec78, #af4261);
   }
   
-  /* Styling for the login card */
   .login-card {
     background: #fff;
     padding: 50px 40px;
@@ -27,7 +24,6 @@
   }
   
   
-  /* Title styling */
   .login-title {
     font-size: 28px;
     margin-bottom: 20px;
@@ -35,7 +31,6 @@
     font-weight: bold;
   }
   
-  /* Google button container */
   .google-btn {
     display: flex;
     justify-content: center;
@@ -81,7 +76,6 @@
     display: flex;
   }
   
-  /* Responsive design */
   @media (max-width: 600px) {
     .login-card {
       padding: 30px 20px;

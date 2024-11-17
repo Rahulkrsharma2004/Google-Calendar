@@ -1,0 +1,395 @@
+/* 
+  body{
+    background-color: #a4fdff;
+  }
+
+  .dashboard {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .dashboard h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .create-button {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .create-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .table th, .table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .table td {
+    background-color: #f9f9f9;
+  }
+  
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-inner {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .popup-inner h2 {
+    margin-top: 0;
+  }
+  
+  .popup-inner input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .popup-inner button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .popup-inner button.submit {
+    background-color: #449d5f;
+    color: #fff;
+  }
+  
+  .popup-inner button.cancel {
+    background-color: #ff3333;
+    color: #fff;
+  }
+  
+  .popup-inner button.submit:hover {
+    background-color: #00b300;
+    transform: scale(1.05);
+  }
+  
+  .popup-inner button.cancel:hover {
+    background-color: #cc0000;
+    transform: scale(1.05);
+  } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 240px;
+    background-color: #2d3a4b;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .logo img {
+    margin: 20px 0;
+    width: 80px;
+    height: 80px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    margin: 20px 0;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  nav ul li a i {
+    margin-right: 10px;
+  }
+  
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-bar input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+  }
+  
+  .calendar-section {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .view-options button {
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    background-color: #ccc;
+    cursor: pointer;
+  }
+  
+  .view-options button:hover {
+    background-color: #bbb;
+  }
+  
+  .create-event-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .create-event-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .event {
+    background-color: #58D68D;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .right-sidebar {
+    width: 240px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .stat {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    flex: 1;
+    margin: 0 5px;
+  }
+  
+  .upcoming-tasks ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+  }
+  
+  .upcoming-tasks li {
+    margin-bottom: 10px;
+  }
+  
+  .calendar h3 {
+    margin: 20px 0 10px 0;
+  }
+  
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-inner {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 90%;
+  }
+  
+  .popup-inner h2 {
+    margin: 0 0 20px 0;
+  }
+  
+  .popup-inner input,
+  .popup-inner button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .popup-inner .submit {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+
+  }
+  
+  .popup-inner .cancel {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    
+  }
+
+  .popup-inner .submit:hover {
+    background-color: #00b300;
+    transform: scale(1.02);
+  }
+  .popup-inner .cancel:hover {
+    background-color: #cc0000;
+    transform: scale(1.02);
+  }
+  
+  .events-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .events-table th,
+  .events-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .events-table th {
+    background-color: #f4f4f4;
+  }
+  
