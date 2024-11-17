@@ -47,7 +47,7 @@ const googleAuth = async (req, res) => {
     await user.save();
 
     res.redirect(
-      `https://google-calendar-rks.vercel.app/dashboard?token=${tokens.access_token}`
+      `https://google-calendar-nine-blond.vercel.app/dashboard?token=${tokens.access_token}`
     );
   } catch (error) {
     console.error("Authentication error:", error.response?.data || error);
