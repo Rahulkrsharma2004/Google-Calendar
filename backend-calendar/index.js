@@ -8,7 +8,7 @@ const eventRoutes = require('./routes/eventRoutes');
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: 'https://google-calendar-rks.vercel.app', 
+  origin: ['http://localhost:5173','https://google-calendar-rks.vercel.app','https://google-calendar-nine-blond.vercel.app' ],
   credentials: true,
 }));
 
