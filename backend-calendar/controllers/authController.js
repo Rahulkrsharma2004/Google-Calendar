@@ -46,15 +46,10 @@ const googleAuth = async (req, res) => {
     }
     await user.save();
 
-    // Redirect to the frontend with encoded user data
     res.redirect(
-      `https://google-calendar-rks.vercel.app/dashboard?user=${encodeURIComponent(
-        JSON.stringify({
-          googleId: user.googleId,
-          accessToken: user.accessToken,
-        })
-      )}`
+      `http://localhost:5173/dashboard?token=${tokens.access_token}`
     );
+
 
   } catch (error) {
     console.error("Authentication error:", error.response?.data || error);
