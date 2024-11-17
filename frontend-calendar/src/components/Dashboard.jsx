@@ -9,7 +9,12 @@ const Dashboard = () => {
   const [eventDate, setEventDate] = useState("");
   const [eventTime, setEventTime] = useState("");
   const [googleToken, setGoogleToken] = useState(null);
+  const [currentDate, setCurrentDate] = useState("");
   useEffect(() => {
+    const date = new Date();
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    const formattedDate = date.toLocaleDateString(undefined, options);
+    setCurrentDate(formattedDate);
     const urlParams = new URLSearchParams(window.location.search);
     const token = urlParams.get("token");
     if (token) {
@@ -71,7 +76,10 @@ const Dashboard = () => {
     <div className="dashboard-container">
       <aside className="sidebar">
         <div className="logo">
-          <img src="logo.png" alt="Logo" />
+          <img
+            src="https://download.logo.wine/logo/Google_Calendar/Google_Calendar-Logo.wine.png"
+            alt=""
+          />
         </div>
         <nav>
           <ul>
@@ -93,8 +101,14 @@ const Dashboard = () => {
 
       <main className="main-content">
         <header className="main-header">
-          <div className="search-bar">
-            <h2>Real-Time Calendar</h2>
+          <div className="logoName">
+            <div className="logoH">
+              <img
+                src="https://download.logo.wine/logo/Google_Calendar/Google_Calendar-Logo.wine.png"
+                alt=""
+              />
+            </div>
+            <h2 style={{fontSize:"1.5em"}}>Real-Time-Calendar</h2>
           </div>
           <div className="user-info">
             <span>Rahul</span>
@@ -106,16 +120,25 @@ const Dashboard = () => {
         </header>
 
         <section className="calendar-section">
-          <div className="calendar-header">
-            <h2>December 7, 2020</h2>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <button
+              onClick={() => setIsPopupOpen(true)}
+              className="create-event-button"
+            >
+              <img
+                className="plusImg"
+                src="https://supporthost.com/wp-content/uploads/2021/11/google-authenticator-add-new-device.png"
+                alt=""
+              />
+              Create Event
+            </button>
+            <div className="calendar-header">
+              <span className="date">
+                <h2 style={{ marginRight: "5px" }}>DATE-</h2>
+              </span>
+              <h2>{currentDate}</h2>
+            </div>
           </div>
-          <button
-            onClick={() => setIsPopupOpen(true)}
-            className="create-event-button"
-          >
-            Create Calendar Event
-          </button>
-
           <table className="events-table">
             <thead>
               <tr>
