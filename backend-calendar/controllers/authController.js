@@ -47,8 +47,18 @@ const googleAuth = async (req, res) => {
     await user.save();
 
     res.redirect(
-      `http://localhost:5173/dashboard?token=${tokens.access_token}`
+      `http://google-calendar-rks.vercel.app/dashboard?token=${user.accessToken}`
     );
+
+    // res.redirect(
+    //   `https://google-calendar-rks.vercel.app/dashboard?user=${encodeURIComponent(
+    //     JSON.stringify({
+    //       googleId: user.googleId,
+    //       accessToken: user.accessToken
+    //     })
+    //   )}`
+    // );
+
   } catch (error) {
     console.error("Authentication error:", error.response?.data || error);
     res.status(500).json({ message: "Google authentication failed", error });
