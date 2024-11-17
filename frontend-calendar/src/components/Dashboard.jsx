@@ -5,20 +5,54 @@ const Dashboard = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/current_user').then((response) => {
-      if (response.data) {
-        // Fetch events from Google Calendar API here
-      }
-    });
+    const token = localStorage.getItem('authToken');
+    if (token) {
+      axios.get('/api/current_user', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }).then((response) => {
+        if (response.data) {
+          // Fetch events from Google Calendar API here
+          fetchEvents(token);
+        }
+      });
+    }
   }, []);
 
-  const createEvent = (event) => {
-    // Logic to create event using Google Calendar API
+  const fetchEvents = async (token) => {
+    try {
+      const response = await axios.get('/api/events', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      setEvents(response.data);
+    } catch (error) {
+      console.error('Error fetching events', error);
+    }
+  };
+
+  const createEvent = async () => {
+    const token = localStorage.getItem('authToken');
+    try {
+      const response = await axios.post('/api/events', {
+        // Event data here
+      }, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      fetchEvents(token); // Refresh events list
+    } catch (error) {
+      console.error('Error creating event', error);
+    }
   };
 
   return (
     <div>
-      <button onClick={() => createEvent()}>Create Calendar Event</button>
+      <h1>Dashboard</h1>
+      <button onClick={createEvent}>Create Calendar Event</button>
       <table>
         <thead>
           <tr>
@@ -30,9 +64,9 @@ const Dashboard = () => {
         <tbody>
           {events.map((event) => (
             <tr key={event.id}>
-              <td>{event.name}</td>
-              <td>{event.date}</td>
-              <td>{event.time}</td>
+              <td>{event.summary}</td>
+              <td>{new Date(event.start.dateTime || event.start.date).toLocaleDateString()}</td>
+              <td>{new Date(event.start.dateTime || event.start.date).toLocaleTimeString()}</td>
             </tr>
           ))}
         </tbody>
