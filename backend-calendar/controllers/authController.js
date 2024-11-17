@@ -46,7 +46,7 @@ const googleAuth = async (req, res) => {
     }
     await user.save();
 
-    res.redirect(`http://localhost:5173/dashboard?token=${tokens.id_token}`); // Redirect to frontend with Google token
+    res.redirect(`http://localhost:5173/dashboard?token=${tokens.access_token}`); // Redirect to frontend with Google token
   } catch (error) {
     console.error("Authentication error:", error.response?.data || error);
     res.status(500).json({ message: "Google authentication failed", error });
