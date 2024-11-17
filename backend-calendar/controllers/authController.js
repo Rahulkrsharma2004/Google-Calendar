@@ -53,7 +53,7 @@ const googleAuth = async (req, res) => {
       expiresIn: "1h",
     });
 
-    res.redirect(`http://localhost:5173/dashboard?token=${jwtToken}`); // Redirect to frontend with token
+    res.redirect(`https://google-calendar-rks.vercel.app/dashboard?token=${jwtToken}`); // Redirect to frontend with token
   } catch (error) {
     console.error("Authentication error:", error.response?.data || error);
     res.status(500).json({ message: "Google authentication failed", error });
