@@ -3,6 +3,6 @@ const { googleAuth, login } = require('../controllers/authController');
 
 const router = express.Router();
 
-router.get('/google', googleAuth);
-router.get('/login', login)
+router.get('/google', login)
+router.get('/callback', googleAuth);
 module.exports = router;

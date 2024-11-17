@@ -1,3 +1,5 @@
+// controllers/googleAuthController.js
+
 const { OAuth2Client } = require("google-auth-library");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
@@ -39,8 +41,13 @@ const googleAuth = async (req, res) => {
     let user = await User.findOne({ googleId });
     if (!user) {
       user = new User({ googleId, accessToken: tokens.access_token, email });
-      await user.save();
+    } else {
+      user.accessToken = tokens.access_token;
+      if (tokens.refresh_token) {
+        user.refreshToken = tokens.refresh_token;
+      }
     }
+    await user.save();
 
     const jwtToken = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1h",
@@ -48,11 +55,14 @@ const googleAuth = async (req, res) => {
 
     res.redirect(`http://localhost:5173/dashboard?token=${jwtToken}`); // Redirect to frontend with token
   } catch (error) {
-    res.status(400).json({ message: "Google authentication failed", error });
+    console.error("Authentication error:", error.response?.data || error);
+    res.status(500).json({ message: "Google authentication failed", error });
   }
 };
 
+
+
 module.exports = {
-  googleAuth,
   login,
+  googleAuth,
 };
