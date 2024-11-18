@@ -192,8 +192,8 @@ const getEvents = async (req, res) => {
 
     const response = await calendar.events.list({
       calendarId: "primary",
-      timeMin: new Date().toISOString(),
-      maxResults: 10,
+      // timeMin: new Date().toISOString(),
+      maxResults: 20,
       singleEvents: true,
       orderBy: "startTime",
     });
