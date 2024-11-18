@@ -13,7 +13,7 @@ This project demonstrates the integration of Google Calendar with a web applicat
 ## **Image**
 <img width="946" alt="1stdatanexify" src="https://github.com/user-attachments/assets/36689adc-85e6-4da7-8c0a-deb88c4c1225">
 <img width="924" alt="3rdimg" src="https://github.com/user-attachments/assets/d39c3131-a7ac-478f-ae0b-a5ba6c1785df">
-<img width="951" alt="newone" src="https://github.com/user-attachments/assets/6d64d9ff-49c2-4bd5-9919-863e3398fbda">
+<img width="952" alt="Captureoooorr" src="https://github.com/user-attachments/assets/23475dbd-a45b-429f-a006-e2cb132cb200">
 <img width="921" alt="newtwo" src="https://github.com/user-attachments/assets/6d905bb5-9a1e-4f10-8abd-6dda7b67d674">
 <img width="933" alt="7thimg" src="https://github.com/user-attachments/assets/b49d3506-a076-40e1-af4d-701736af5f2e">
 
