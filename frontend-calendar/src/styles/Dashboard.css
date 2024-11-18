@@ -1,6 +1,5 @@
 body {
   font-family: "Arial", sans-serif;
-  /* background-color: #f4f7f9; */
   margin: 0;
   padding: 0;
 }
@@ -89,6 +88,11 @@ nav ul li a i {
   overflow-y: auto;
 }
 
+.calenButton{
+  display: flex;
+  justify-content: space-between;
+}
+
 .calendar-header {
   display: flex;
   justify-content: space-between;
@@ -109,7 +113,6 @@ nav ul li a i {
 
 .create-event-button {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   font-size: large;
   padding: 15px 20px;
@@ -119,7 +122,6 @@ nav ul li a i {
   border-radius: 30px;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  /* margin-top: 20px; */
 }
 
 .create-event-button:hover {
@@ -127,8 +129,6 @@ nav ul li a i {
 }
 .plusImg {
   width: 25px;
-  /* text-align: center; */
-  /* height: 20px; */
   margin-right: 5px;
 }
 .logoName {
@@ -145,13 +145,11 @@ nav ul li a i {
 }
 
 .loading-container {
-  /* background-color: #00b300; */
   margin-top: 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* height: 100vh;  */
   text-align: center;
 }
 
@@ -161,17 +159,20 @@ nav ul li a i {
   height: 40px;
   border: 5px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  border-top-color: #4285F4; 
-  border-right-color: #EA4335; 
-  border-bottom-color: #FBBC05; 
-  border-left-color: #34A853; 
-  /* border-left-color: #ffffff;  */
+  border-top-color: #4285f4;
+  border-right-color: #ea4335;
+  border-bottom-color: #fbbc05;
+  border-left-color: #34a853;
   animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .loading-text {
@@ -179,7 +180,6 @@ nav ul li a i {
   font-size: 1.2em;
   color: #333;
 }
-
 
 .events-table {
   width: 100%;
@@ -365,10 +365,26 @@ nav ul li a i {
   .logoH {
     display: block;
   }
-  .logoH img{
+  .logoH img {
     width: 100%;
     max-width: 100px;
     height: auto;
+  }
+}
+
+@media (max-width: 460px) {
+  .logoName{
+    display: flex;
+    flex-direction: column;
+  }
+  .calenButton{
+    flex-direction: column;
+    align-items: center;
+    /* padding: 20px; */
+  }
+  .calendar-header{
+    padding: 30px;
+    /* margin-bottom: 20px; */
   }
 }
 

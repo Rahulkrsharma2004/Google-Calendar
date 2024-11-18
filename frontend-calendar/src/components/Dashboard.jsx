@@ -122,7 +122,7 @@ const Dashboard = () => {
         </header>
 
         <section className="calendar-section">
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div className="calenButton">
             <button
               onClick={() => setIsPopupOpen(true)}
               className="create-event-button"
