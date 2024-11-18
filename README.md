@@ -1,12 +1,10 @@
 # **Google Calendar**
+This project demonstrates the integration of Google Calendar with a web application MERN stack full Frontend and Backend, allowing users to authenticate using their Google account, access their calendar in real-time, and create events directly from the application and also show on UI.
 
-This is the frontend application for the **Google Calendar Integration** project. It provides a user interface for interacting with the backend, allowing users to authenticate with Google, view their calendar events, create new events, and manage their accounts.
-
----
 
 ## **Features**
 
-- Google OAuth 2.0 login and logout functionality.
+- Google OAuth 2.0 login functionality.
 - Fetch and display events from the user's Google Calendar in a user-friendly table format.
 - Create new calendar events.
 - Responsive design for seamless use across devices.
@@ -21,25 +19,37 @@ This is the frontend application for the **Google Calendar Integration** project
 <img width="941" alt="5thimg" src="https://github.com/user-attachments/assets/ff01db8e-dc2c-4da3-bf62-eba778a7845b">
 <img width="933" alt="7thimg" src="https://github.com/user-attachments/assets/b49d3506-a076-40e1-af4d-701736af5f2e">
 
+## Authentication Flow
+
+ **Login**:
+   - Users log in using Google OAuth 2.0.
+   - After granting permissions, users are redirected back with an authorization code.
+
+ **Token Exchange**:
+   - The server exchanges the authorization code for access and refresh tokens.
+   - Tokens are used to authenticate API requests.
+
+ **User Information**:
+   - The server verifies the ID token and retrieves user info.
+   - User info is stored in the database for session management.
 
 
-## **Tech Stack**
+## Technologies Used
 
-- **React.js**: Frontend library for building UI.
+- **React.js**: Frontend library for building user interfaces.
+- **Node.js**: Backend runtime environment for executing JavaScript code.
+- **Express.js**: Web framework for Node.js to build backend APIs.
 - **Vanilla CSS**: For styling the application.
-- **React Router**: For navigation and routing.
+- **React Router**: For navigation and routing within the React application.
 
 ---
 
-## **Getting Started**
+## **Getting Started**  
 - First clone the repository --
+- Cloning Frontend and Backend --
+- cd frontend-calendar/
 - Run the command in terminal **npm run dev**
 
-### **1. Prerequisites**
-
-Ensure you have the following installed:
-
-- **Node.js**: Version 14 or above.
-- **npm** : For managing dependencies.
-
----
+# If You want to check my website please send me "Your Email ID" here.
+- kumarrahulbasdiha@gmail.com
+- 8084906496
