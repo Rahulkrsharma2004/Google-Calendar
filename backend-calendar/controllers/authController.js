@@ -48,7 +48,7 @@ const googleAuth = async (req, res) => {
     await user.save();
 
     res.redirect(
-      `http://localhost:5173/dashboard?token=${tokens.access_token}`
+      `https://google-calendar-rks.netlify.app/dashboard?token=${tokens.access_token}`
     );
 
 
