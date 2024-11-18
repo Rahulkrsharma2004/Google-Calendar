@@ -7,10 +7,13 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [eventName, setEventName] = useState("");
-  const [eventDate, setEventDate] = useState("");
-  const [eventTime, setEventTime] = useState("");
+  const [eventStartDate, setEventStartDate] = useState("");
+  const [eventStartTime, setEventStartTime] = useState("");
+  const [eventEndDate, setEventEndDate] = useState("");
+  const [eventEndTime, setEventEndTime] = useState("");
   const [googleToken, setGoogleToken] = useState(null);
   const [currentDate, setCurrentDate] = useState("");
+
   useEffect(() => {
     const date = new Date();
     const options = { year: "numeric", month: "long", day: "numeric" };
@@ -52,8 +55,10 @@ const Dashboard = () => {
         "https://google-calendar-nine-blond.vercel.app/api/events/createevent",
         {
           name: eventName,
-          date: eventDate,
-          time: eventTime,
+          startDate: eventStartDate,
+          startTime: eventStartTime,
+          endDate: eventEndDate,
+          endTime: eventEndTime,
         },
         {
           headers: {
@@ -64,6 +69,11 @@ const Dashboard = () => {
       alert("Event created successfully!");
       fetchEvents(token);
       setIsPopupOpen(false);
+      setEventName("");
+      setEventStartDate("");
+      setEventStartTime("");
+      setEventEndDate("");
+      setEventEndTime("");
     } catch (error) {
       console.error("Error creating event in backend", error);
     }
@@ -113,7 +123,7 @@ const Dashboard = () => {
             <h2 style={{ fontSize: "1.5em" }}>Real-Time-Calendar</h2>
           </div>
           <div className="user-info">
-            <span>Rahul</span>
+            {/* <span>Rahul</span> */}
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPFNeUn89NkscCQdePBFlIp7ixL81eU9pY3g&s"
               alt="User Avatar"
@@ -141,36 +151,30 @@ const Dashboard = () => {
               <h2>{currentDate}</h2>
             </div>
           </div>
-          { loading ? (
-              <div className="loading-container">
-                <div className="spinner"></div>
-                <div className="loading-text">Loading...</div>
-              </div>
-            ) : (
+          {loading ? (
+            <div className="loading-container">
+              <div className="spinner"></div>
+              <div className="loading-text">Loading...</div>
+            </div>
+          ) : (
             <table className="events-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Time</th>
-              </tr>
-            </thead>
-            
+              <thead>
+                <tr>
+                  <th>EVENT NAME</th>
+                  <th>START TIME</th>
+                  <th>END TIME</th>
+                </tr>
+              </thead>
               <tbody>
                 {events.map((event) => (
                   <tr key={event.id}>
                     <td>{event.summary}</td>
-                    <td>
-                      {new Date(event.start.dateTime).toLocaleDateString()}
-                    </td>
-                    <td>
-                      {new Date(event.start.dateTime).toLocaleTimeString()}
-                    </td>
+                    <td>{new Date(event.start.dateTime).toLocaleString()}</td>
+                    <td>{new Date(event.end.dateTime).toLocaleString()}</td>
                   </tr>
                 ))}
               </tbody>
-            
-          </table>
+            </table>
           )}
         </section>
       </main>
@@ -189,14 +193,26 @@ const Dashboard = () => {
               />
               <input
                 type="date"
-                value={eventDate}
-                onChange={(e) => setEventDate(e.target.value)}
+                value={eventStartDate}
+                onChange={(e) => setEventStartDate(e.target.value)}
                 required
               />
               <input
                 type="time"
-                value={eventTime}
-                onChange={(e) => setEventTime(e.target.value)}
+                value={eventStartTime}
+                onChange={(e) => setEventStartTime(e.target.value)}
+                required
+              />
+              <input
+                type="date"
+                value={eventEndDate}
+                onChange={(e) => setEventEndDate(e.target.value)}
+                required
+              />
+              <input
+                type="time"
+                value={eventEndTime}
+                onChange={(e) => setEventEndTime(e.target.value)}
                 required
               />
               <button className="submit" type="submit">
