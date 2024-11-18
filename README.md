@@ -12,10 +12,6 @@ This project demonstrates the integration of Google Calendar with a web applicat
 ---
 ## **Image**
 <img width="946" alt="1stdatanexify" src="https://github.com/user-attachments/assets/36689adc-85e6-4da7-8c0a-deb88c4c1225">
-
-🔴The app has not been verified by Google yet, which may take some time. As a result, it is currently only accessible to the users that I have added under the Google consent testing section . If you want to check my app please provide me your email address I will add this and you will get permission access.👇
-
-<img width="934" alt="2ndimg" src="https://github.com/user-attachments/assets/340dad8c-8143-4ed7-a395-0c81abbb1a48">
 <img width="924" alt="3rdimg" src="https://github.com/user-attachments/assets/d39c3131-a7ac-478f-ae0b-a5ba6c1785df">
 <img width="948" alt="4thimg" src="https://github.com/user-attachments/assets/8aeab161-5666-414a-b785-7c4fa15519d2">
 <img width="947" alt="5thimg" src="https://github.com/user-attachments/assets/ff01db8e-dc2c-4da3-bf62-eba778a7845b">
@@ -52,6 +48,3 @@ This project demonstrates the integration of Google Calendar with a web applicat
 - cd frontend-calendar/
 - Run the command in terminal **npm run dev**
 
-# If You want to check my website please send me "Your Email ID" here.
-- kumarrahulbasdiha@gmail.com
-- 8084906496
