@@ -4,8 +4,8 @@ import "../styles/Dashboard.css";
 
 const Dashboard = () => {
   const [events, setEvents] = useState([]);
-  const [loading, setLoading]= useState(false);
-  const [isPopupOpen, setIsPopupOpen] = useState(true);
+  const [loading, setLoading]= useState(true);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [eventName, setEventName] = useState("");
   const [eventDate, setEventDate] = useState("");
   const [eventTime, setEventTime] = useState("");
