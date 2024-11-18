@@ -4,7 +4,8 @@ import "../styles/Dashboard.css";
 
 const Dashboard = () => {
   const [events, setEvents] = useState([]);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [loading, setLoading]= useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(true);
   const [eventName, setEventName] = useState("");
   const [eventDate, setEventDate] = useState("");
   const [eventTime, setEventTime] = useState("");
@@ -38,6 +39,7 @@ const Dashboard = () => {
       );
       console.log(response);
       setEvents(response.data);
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching events from backend", error);
     }
@@ -108,7 +110,7 @@ const Dashboard = () => {
                 alt=""
               />
             </div>
-            <h2 style={{fontSize:"1.5em"}}>Real-Time-Calendar</h2>
+            <h2 style={{ fontSize: "1.5em" }}>Real-Time-Calendar</h2>
           </div>
           <div className="user-info">
             <span>Rahul</span>
@@ -147,15 +149,23 @@ const Dashboard = () => {
                 <th>Time</th>
               </tr>
             </thead>
-            <tbody>
-              {events.map((event) => (
-                <tr key={event.id}>
-                  <td>{event.summary}</td>
-                  <td>{new Date(event.start.dateTime).toLocaleDateString()}</td>
-                  <td>{new Date(event.start.dateTime).toLocaleTimeString()}</td>
-                </tr>
-              ))}
-            </tbody>
+            {loading ? (
+              <div className="Loading">Loading...</div>
+            ) : (
+              <tbody>
+                {events.map((event) => (
+                  <tr key={event.id}>
+                    <td>{event.summary}</td>
+                    <td>
+                      {new Date(event.start.dateTime).toLocaleDateString()}
+                    </td>
+                    <td>
+                      {new Date(event.start.dateTime).toLocaleTimeString()}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            )}
           </table>
         </section>
       </main>
