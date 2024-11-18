@@ -18,7 +18,9 @@ This is the frontend application for the **Google Calendar Integration** project
 <img width="924" alt="3rdimg" src="https://github.com/user-attachments/assets/d39c3131-a7ac-478f-ae0b-a5ba6c1785df">
 <img width="948" alt="4thimg" src="https://github.com/user-attachments/assets/8aeab161-5666-414a-b785-7c4fa15519d2">
 <img width="947" alt="5thimg" src="https://github.com/user-attachments/assets/ff01db8e-dc2c-4da3-bf62-eba778a7845b">
-![6thimg](https://github.com/user-attachments/assets/cf64fa41-1c09-4ad8-8801-b82c5196d025)
+<img width="941" alt="5thimg" src="https://github.com/user-attachments/assets/ff01db8e-dc2c-4da3-bf62-eba778a7845b">
+<img width="933" alt="7thimg" src="https://github.com/user-attachments/assets/b49d3506-a076-40e1-af4d-701736af5f2e">
+
 
 
 ## **Tech Stack**
