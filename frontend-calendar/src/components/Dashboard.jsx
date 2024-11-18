@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/Dashboard.css";
+import Calendar from "./Calendar";
 
 const Dashboard = () => {
   const [events, setEvents] = useState([]);
@@ -109,6 +110,9 @@ const Dashboard = () => {
             </li>
           </ul>
         </nav>
+        <div>
+          <Calendar/>
+        </div>
       </aside>
 
       <main className="main-content">
