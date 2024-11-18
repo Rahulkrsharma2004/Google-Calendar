@@ -4,7 +4,7 @@ import "../styles/Dashboard.css";
 
 const Dashboard = () => {
   const [events, setEvents] = useState([]);
-  const [loading, setLoading]= useState(true);
+  const [loading, setLoading] = useState(true);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [eventName, setEventName] = useState("");
   const [eventDate, setEventDate] = useState("");
@@ -150,7 +150,10 @@ const Dashboard = () => {
               </tr>
             </thead>
             {loading ? (
-              <div className="Loading">Loading...</div>
+              <div className="loading-container">
+                <div className="spinner"></div>
+                <div className="loading-text">Loading...</div>
+              </div>
             ) : (
               <tbody>
                 {events.map((event) => (
