@@ -1,58 +1,60 @@
-
 .calendar {
-    width: 300px;
-    height: auto;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #fff;
+  width: 300px;
+  height: auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* border-radius: 8px; */
+  overflow: hidden;
+  background-color: #fff;
 }
 
 .month {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background-color: #4285f4;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #c7dbf7;
+  color: rgb(56, 55, 55);
 }
 
-.month .prev, .month .next {
-    cursor: pointer;
-    font-size: 24px;
+.month .prev,
+.month .next {
+  cursor: pointer;
+  font-size: 24px;
 }
 
 .month .date {
-    text-align: center;
+  text-align: center;
 }
 
-.weekdays, .days {
-    display: flex;
-    flex-wrap: wrap;
+.weekdays,
+.days {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.weekdays div, .days div {
-    width: 14%;
-    text-align: center;
-    padding: 7px 0;
+.weekdays div,
+.days div {
+  width: 14%;
+  text-align: center;
+  padding: 7px 0;
 }
 
 .weekdays {
-    background-color: #e9ecef;
+  background-color: #e9ecef;
 }
 
 .days div {
-    cursor: pointer;
-    transition: background-color 0.3s;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .days div:hover {
-    /* background-color: #e9ecef; */
+  /* background-color: #e9ecef; */
 }
 
 .days .today {
-    background-color: #4285f4;
-    /* border: 3px #4285f4 solid; */
-    color: white;
-    border-radius: 50%;
+  background-color: #4285f4;
+  /* border: 3px #4285f4 solid; */
+  color: white;
+  border-radius: 50%;
 }

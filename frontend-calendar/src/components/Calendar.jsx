@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Calendar.css';
+import '../styles/Calendar.css';
 
 const Calendar = () => {
   const [date, setDate] = useState(new Date());
@@ -58,14 +58,14 @@ const Calendar = () => {
 
   return (
     <div className="calendar">
-      <div className="month">
+      {/* <div className="month">
         <div className="prev" onClick={prevMonth}>&#10094;</div>
         <div className="date">
           <h2>{`${months[date.getMonth()]} ${date.getFullYear()}`}</h2>
           <p>{new Date().toDateString()}</p>
         </div>
         <div className="next" onClick={nextMonth}>&#10095;</div>
-      </div>
+      </div> */}
       <div className="weekdays">
         <div>Sun</div>
         <div>Mon</div>

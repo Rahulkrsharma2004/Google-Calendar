@@ -110,7 +110,7 @@ const Dashboard = () => {
             </li>
           </ul>
         </nav>
-        <div>
+        <div className="side-cal">
           <Calendar/>
         </div>
       </aside>
