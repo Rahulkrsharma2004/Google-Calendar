@@ -191,11 +191,12 @@ const getEvents = async (req, res) => {
     const calendar = google.calendar({ version: "v3", auth: oAuth2Client });
 
     const response = await calendar.events.list({
-      calendarId: "primary",
-      // timeMin: new Date().toISOString(),
-      maxResults: 20,
+      calendarId: 'primary',
+      timeMax: now, // To get events up to the current time (past events)
+      timeMin: new Date(new Date().setMonth(new Date().getMonth() - 1)).toISOString(), // Set this to 1 month ago (can adjust for 5 previous events dynamically)
+      maxResults: 25, // Adjust to retrieve more events, so you have both past and future events
       singleEvents: true,
-      orderBy: "startTime",
+      orderBy: 'startTime',
     });
 
     res.status(200).json(response.data.items);
