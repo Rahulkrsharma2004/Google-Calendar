@@ -36,6 +36,7 @@ const googleAuth = async (req, res) => {
     const email = payload.email;
 
     let user = await User.findOne({ googleId });
+
     if (!user) {
       user = new User({ googleId, accessToken: tokens.access_token, email });
     } else {
@@ -47,7 +48,7 @@ const googleAuth = async (req, res) => {
     await user.save();
 
     res.redirect(
-      `http://localhost:5173/dashboard?token=${tokens.access_token}`
+      `https://google-calendar-rks.vercel.app/dashboard?token=${tokens.access_token}`
     );
 
 
