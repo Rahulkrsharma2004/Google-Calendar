@@ -85,13 +85,13 @@ const getEvents = async (req, res) => {
     // today.setHours(0, 0, 0, 0);
 
     const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1); // Set the date to yesterday
+    yesterday.setDate(yesterday.getDate() - 3); // Set the date to yesterday
     yesterday.setHours(0, 0, 0, 0);
 
     const response = await calendar.events.list({
       calendarId: "primary",
       timeMin: yesterday.toISOString(),
-      maxResults: 20,
+      maxResults: 25,
       singleEvents: true,
       orderBy: "startTime",
     });
