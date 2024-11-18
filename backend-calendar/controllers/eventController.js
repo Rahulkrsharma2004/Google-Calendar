@@ -81,11 +81,16 @@ const getEvents = async (req, res) => {
     oAuth2Client.setCredentials({ access_token: token });
 
     const calendar = google.calendar({ version: "v3", auth: oAuth2Client });
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    // const today = new Date();
+    // today.setHours(0, 0, 0, 0);
+
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1); // Set the date to yesterday
+    yesterday.setHours(0, 0, 0, 0);
+
     const response = await calendar.events.list({
       calendarId: "primary",
-      timeMin: today.toISOString(),
+      timeMin: yesterday.toISOString(),
       maxResults: 20,
       singleEvents: true,
       orderBy: "startTime",
