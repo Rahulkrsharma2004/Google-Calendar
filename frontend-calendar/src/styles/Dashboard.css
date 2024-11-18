@@ -145,20 +145,27 @@ nav ul li a i {
 }
 
 .loading-container {
+  /* background-color: #00b300; */
+  margin-top: 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; 
+  /* height: 100vh;  */
   text-align: center;
 }
 
 .spinner {
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  border-top: 4px solid #3498db;
-  border-radius: 50%;
+  display: inline-block;
   width: 40px;
   height: 40px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #4285F4; 
+  border-right-color: #EA4335; 
+  border-bottom-color: #FBBC05; 
+  border-left-color: #34A853; 
+  /* border-left-color: #ffffff;  */
   animation: spin 1s linear infinite;
 }
 

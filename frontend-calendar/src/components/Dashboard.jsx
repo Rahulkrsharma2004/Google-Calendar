@@ -141,7 +141,13 @@ const Dashboard = () => {
               <h2>{currentDate}</h2>
             </div>
           </div>
-          <table className="events-table">
+          { loading ? (
+              <div className="loading-container">
+                <div className="spinner"></div>
+                <div className="loading-text">Loading...</div>
+              </div>
+            ) : (
+            <table className="events-table">
             <thead>
               <tr>
                 <th>Name</th>
@@ -149,12 +155,7 @@ const Dashboard = () => {
                 <th>Time</th>
               </tr>
             </thead>
-            {loading ? (
-              <div className="loading-container">
-                <div className="spinner"></div>
-                <div className="loading-text">Loading...</div>
-              </div>
-            ) : (
+            
               <tbody>
                 {events.map((event) => (
                   <tr key={event.id}>
@@ -168,8 +169,9 @@ const Dashboard = () => {
                   </tr>
                 ))}
               </tbody>
-            )}
+            
           </table>
+          )}
         </section>
       </main>
 
