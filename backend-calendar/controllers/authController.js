@@ -48,7 +48,7 @@ const googleAuth = async (req, res) => {
     await user.save();
 
     res.redirect(
-      `https://google-calendar-rks.vercel.app/dashboard?token=${tokens.access_token}`
+      `https://google-calendar-rks.netlify.app/dashboard?token=${tokens.access_token}`
     );
 
 
