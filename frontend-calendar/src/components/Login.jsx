@@ -17,7 +17,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-card">
-        <h2 className="login-title">Welcome In DataNexify</h2>
+        <h2 className="login-title">Welcome To Home Page</h2>
         <br />
         <p>Sign in to continue</p>
         <br />
